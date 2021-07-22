@@ -12,9 +12,21 @@
     <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
     <script>
+        /* tham số thử nhất là một phần tử của element, tham số 2 là một object chứa các 
+        property của một phần tử , cách gọi khác gọi khác là props */
         const hello = React.createElement('div', null,'Hello Nguyen Trien');
+        const title = React.createElement('div',{
+            className:'title'
+        }, 'Phương phát học react');
+
+        const image = React.createElement('img',
+        {src:'https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F236x%2F5c%2F22%2F33%2F5c2233d067b51ee77760d27c82823646.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fngocloly9899%2F%25E1%25BA%25A3nh-ho%25E1%25BA%25A1t-h%25C3%25ACnh-chibi%2F&tbnid=Tu1Ushbi4P_tQM&vet=12ahUKEwjbhpHU-_bxAhVD35QKHZg8CeQQMygAegUIARCpAQ..i&docid=CowCKrowX4PsFM&w=236&h=353&q=h%C3%ACnh&ved=2ahUKEwjbhpHU-_bxAhVD35QKHZg8CeQQMygAegUIARCpAQ'})
         const root = document.getElementById('root')
-        ReactDOM.render(hello,root)
+        const App = React.createElement('div',{
+            className:'root2'
+        },title,image)
+
+        ReactDOM.render(App,root)
     </script>
 </body>
 </html>
