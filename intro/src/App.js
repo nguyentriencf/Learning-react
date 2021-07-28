@@ -1,21 +1,20 @@
 import './App.css';
-import Employee from './Employee';
-
+import React, {useState} from 'react'
 
 function App() {
-  const employees =["Nguyen Dinh Phat Trien","Le Van Ti","Lo Vi Song"]
+  const [isLoggedIn, setIsloggedin] =useState(false) ;
   return ( 
     <div className="App">
-      {employees && employees.length >0 && (
+      <h1>Welcom to the my app</h1>
+      <button onClick={()=>
+        setIsloggedin(!isLoggedIn)}>
+          {isLoggedIn ? ("Log out"):("Log in")}
+        </button>
+      {isLoggedIn? (<h1>Hello, Nguyen Trien</h1>):(
         <div>
-          <h1>Em ployees List:</h1>
-          {employees.map((employee) => (
-            <h4>{employee}</h4>
-          ))}
+          <h2>please login to continue</h2>
         </div>
       )}
-
-
     </div> 
 
   );
