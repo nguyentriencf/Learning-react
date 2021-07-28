@@ -1,22 +1,18 @@
 import './App.css';
 import React, {useState} from 'react'
+import Counter from './Counter';
 
 function App() {
-  const [isLoggedIn, setIsloggedin] =useState(false) ;
+  const [showCouter,setShowCouter] =useState(false) ;
   return ( 
     <div className="App">
       <h1>Welcom to the my app</h1>
       <button onClick={()=>
-        setIsloggedin(!isLoggedIn)}>
-          {isLoggedIn ? ("Log out"):("Log in")}
+        setShowCouter(!showCouter)}>
+          {showCouter ? ("Hide Show counter"):("Show Counter")}
         </button>
-      {isLoggedIn? (<h1>Hello, Nguyen Trien</h1>):(
-        <div>
-          <h2>please login to continue</h2>
-        </div>
-      )}
+     {showCouter && <Counter/>}
     </div> 
-
   );
 }
 export default App;
